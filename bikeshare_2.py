@@ -233,7 +233,10 @@ def user_stats(df):
 
 
 def provide_raw_data(df):
-    """Displays raw Data."""
+    """
+    Displays raw Data.
+    Asks user if he wants to see more.
+    """
 
     show_init = input('\nWould you like to see the raw data? Enter yes or no.\n').lower()
     if show_init[0] == 'y':
