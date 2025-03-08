@@ -27,8 +27,7 @@ def get_filters():
         try:
             city = input('Would you like to see data from Chicago, New York oder Washington?\n').lower()
             if city in ['chicago', 'new york', 'washington']:
-                if city == 'new york':
-                    city = 'new york city'
+                city = 'new york city' if city == 'new york'
                 print(f"Looks like you want to hear about {city.title()}! If this is not true, restart the program now.\n")
                 break
             else:
@@ -135,7 +134,6 @@ def time_stats(df):
     start_time = time.time()
 
     # display the most common month
-
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     popular_month = df['month'].mode()[0]
     print(f"What is the most popular month for traveling?\n{months[popular_month-1]}\n")
